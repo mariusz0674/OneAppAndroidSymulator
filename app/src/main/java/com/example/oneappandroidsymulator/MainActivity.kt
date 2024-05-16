@@ -1,7 +1,6 @@
 package com.example.oneappandroidsymulator
 
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -28,11 +27,11 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
-        binding.fab.setOnClickListener { view ->
-            if (!navController.navigateUp()) {
-                finish()
-            }
-        }
+//        binding.fab.setOnClickListener { view ->
+//            if (!navController.navigateUp()) {
+//                finish()
+//            }
+//        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
