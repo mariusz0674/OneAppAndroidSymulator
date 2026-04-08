@@ -6,23 +6,69 @@
     android:layout_height="match_parent"
     tools:context=".FirstFragment">
 
+    <!-- Tytuł ekranu -->
     <TextView
-        android:id="@+id/textview_first"
-        android:layout_width="wrap_content"
+        android:id="@+id/Label"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/hello_first_fragment"
-        app:layout_constraintBottom_toTopOf="@id/button_first"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Web View symulator"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="16dp" />
 
+    <!-- Etykieta pola (zamiast placeholdera) -->
+    <TextView
+        android:id="@+id/urlLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="URL do otwarcia"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/Label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="12dp" />
+
+    <!-- Duży, wieloliniowy input na URL (bez placeholdera) -->
+    <EditText
+        android:id="@+id/urlField"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/urlLabel"
+        app:layout_constraintBottom_toTopOf="@id/button_first"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        android:padding="12dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+
+        android:inputType="textUri|textMultiLine|textNoSuggestions"
+        android:gravity="top|start"
+        android:minLines="6"
+        android:scrollbars="vertical"
+        android:overScrollMode="always"
+        android:fontFamily="monospace"
+        tools:text="https://deathstar.empire/login?redirect=trench-run" />
+
+    <!-- Przycisk "Dalej" przy dolnej krawędzi -->
     <Button
         android:id="@+id/button_first"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/next"
+        app:layout_constraintTop_toBottomOf="@id/urlField"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_first" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="24dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
